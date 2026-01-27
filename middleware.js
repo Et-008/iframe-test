@@ -5,18 +5,18 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const cspHeader = `
-  default-src 'self';
-  script-src 'self'  'nonce-${nonce}'  ${
+  default-src: 'self';
+  script-src: 'self'  'nonce-${nonce}'  ${
     process.env.NODE_ENV === "production" ? `` : `'unsafe-eval'`
   };
-  style-src 'self' 'nonce-${nonce}' ;
-  img-src 'self' blob: data:;
-  font-src 'self';
-  object-src 'none';
-  base-uri 'self';
-  form-action 'self';
-  frame-ancestors 'none';
-  upgrade-insecure-requests;
+  style-src: 'self' 'nonce-${nonce}' ;
+  img-src: 'self' blob: data:;
+  font-src: 'self';
+  object-src: 'none';
+  base-uri: 'self';
+  form-action: 'self';
+  frame-ancestors: '*.superopsalpha.com';
+  upgrade-insecure-requests: true;
 `;
 
   // Replace newline characters and spaces
