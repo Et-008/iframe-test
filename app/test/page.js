@@ -4,6 +4,7 @@
 import Image from "../_components/image";
 import styles from "../page.module.css";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Test() {
   const [confirmExitPrompt, setConfirmExitPrompt] = useState(false);
@@ -128,7 +129,7 @@ export default function Test() {
           <code className={styles.code}>app/test/page.js</code>
         </p>
         <p>
-          <a href="/">Home Page</a>
+          <Link href="/">Home Page</Link>
         </p>
         <p
           onClick={() => {
