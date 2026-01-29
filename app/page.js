@@ -2,6 +2,7 @@
 
 // import Image from "next/image";
 import Image from "./_components/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
           <code className={styles.code}>app/page.js</code>
         </p>
         <p>
-          <a href="/test">Test Page</a>
+          <Link href="/test">Test Page</Link>
         </p>
         <div>
           <a
